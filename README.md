@@ -61,7 +61,7 @@ On first launch, the app will request VPN permission. This is required for packe
 ### 5. Start Capturing
 Tap "Start Capture" on the home screen to begin monitoring network traffic.
 
-## 📖 Architecture
+## Architecture
 
 ### Clean Architecture Layers
 
