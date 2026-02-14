@@ -2,7 +2,7 @@
 
 A professional-grade Deep Packet Inspection (DPI) application for Android that provides real-time packet capture, protocol identification, flow analysis, and threat detection.
 
-## 🎯 Features
+## Features
 
 ### Implemented (MVP)
 - **VPN-Based Packet Capture** - Non-root packet interception using Android VpnService
@@ -61,7 +61,7 @@ On first launch, the app will request VPN permission. This is required for packe
 ### 5. Start Capturing
 Tap "Start Capture" on the home screen to begin monitoring network traffic.
 
-## 📖 Architecture
+## Architecture
 
 ### Clean Architecture Layers
 
@@ -115,7 +115,7 @@ Tap "Start Capture" on the home screen to begin monitoring network traffic.
 - Threats: Threat dashboard
 - Flows: Network flow analysis
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Language:** Kotlin
 - **UI:** Jetpack Compose + Material Design 3
@@ -126,7 +126,7 @@ Tap "Start Capture" on the home screen to begin monitoring network traffic.
 - **Minimum SDK:** API 30 (Android 11)
 - **Target SDK:** API 34 (Android 14)
 
-## 📊 Performance
+## Performance
 
 Current performance metrics (on Snapdragon 8 Gen 2):
 
@@ -137,7 +137,7 @@ Current performance metrics (on Snapdragon 8 Gen 2):
 | Memory Usage | <200 MB | ~120 MB |
 | Battery Drain | <15%/hr | ~12%/hr |
 
-## 🔒 Permissions
+## Permissions
 
 Required permissions:
 - `INTERNET` - Network access
@@ -146,7 +146,7 @@ Required permissions:
 - `FOREGROUND_SERVICE` - Background operation
 - `POST_NOTIFICATIONS` - Capture notifications
 
-## 📱 Usage
+## Usage
 
 ### Starting Capture
 1. Open the app
@@ -174,7 +174,7 @@ Required permissions:
 1. Tap "Stop Capture" on home screen
 2. All data is preserved for analysis
 
-## 🧪 Testing
+## Testing
 
 ### Run Tests
 ```bash
@@ -190,7 +190,7 @@ Required permissions:
 - Integration tests: >60%
 - UI tests: >40%
 
-## 🐛 Known Issues
+## Known Issues
 
 1. **High battery drain** on some devices during continuous capture
    - Workaround: Use adaptive sampling or pause when screen off
@@ -201,7 +201,7 @@ Required permissions:
 3. **VPN conflicts** with other VPN apps
    - Workaround: Disable other VPN apps before using
 
-## 🗺️ Roadmap
+## Roadmap
 
 ### Phase 2
 - [ ] Integrate nDPI library
