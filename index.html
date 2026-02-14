@@ -11,360 +11,488 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #4F46E5 0%, #0EA5E9 100%);
-            color: #333;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1629 100%);
+            color: #e0e7ff;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header/Hero Section */
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        .hero-header {
+        /* Sticky Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #667eea;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .muj-logo {
-            font-size: 14px;
-            color: #667eea;
-            font-weight: bold;
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar-logo {
+            color: #6366f1;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .navbar-logo span {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-subtitle {
+            color: #94a3b8;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #60a5fa;
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 40px 40px;
+        }
+
+        /* Student ID Badge */
+        .student-id {
+            position: fixed;
+            top: 100px;
+            right: 40px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            z-index: 1001;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 40px 120px;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero-title {
-            font-size: 48px;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 10px;
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
         .hero-subtitle {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 22px;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            font-weight: 400;
         }
 
         .hero-statement {
-            font-size: 18px;
-            font-style: italic;
-            color: #555;
-            line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
+            font-size: 18px;
+            font-style: italic;
+            color: #94a3b8;
+            line-height: 1.8;
+            padding: 30px 40px;
+            background: rgba(99, 102, 241, 0.05);
+            border-left: 3px solid #6366f1;
+            border-radius: 8px;
         }
 
-        .student-id {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #667eea;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        /* Navigation */
-        nav {
-            background: white;
-            border-radius: 50px;
-            padding: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: 600;
-            padding: 10px 25px;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-
-        nav a:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        /* Sections */
+        /* Section Styling */
         section {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 100px;
+            scroll-margin-top: 80px;
         }
 
         h2 {
-            font-size: 36px;
-            color: #667eea;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+            font-size: 42px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         h3 {
-            font-size: 24px;
-            color: #764ba2;
-            margin-top: 30px;
+            font-size: 28px;
+            color: #a78bfa;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: #60a5fa;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         p {
             font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
+        /* Cards with Border Glow */
+        .card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        /* Metrics */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
+            background: rgba(99, 102, 241, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .metric-value {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Lists */
         ul {
             list-style: none;
             padding-left: 0;
         }
 
         li {
-            padding: 10px 0;
-            padding-left: 30px;
+            padding: 12px 0;
+            padding-left: 35px;
             position: relative;
-            color: #555;
+            color: #cbd5e1;
         }
 
         li:before {
-            content: "✓";
+            content: "▹";
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #60a5fa;
             font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Stats/Metrics */
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .metric-value {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .metric-label {
-            font-size: 16px;
-            opacity: 0.9;
+            font-size: 20px;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 15px 40px;
-            background: #667eea;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 8px;
             font-weight: 600;
             margin: 10px;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background: #764ba2;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(118, 75, 162, 0.4);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
         .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+            background: transparent;
+            border: 1px solid #6366f1;
+            color: #60a5fa;
         }
 
         .btn-secondary:hover {
-            background: #667eea;
-            color: white;
+            background: rgba(99, 102, 241, 0.1);
         }
 
-        /* Architecture Diagram */
+        /* Code/Architecture Block */
         .architecture {
-            background: #f8f9fa;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
             padding: 30px;
-            border-radius: 15px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
+            margin: 30px 0;
             overflow-x: auto;
+            font-family: 'Courier New', monospace;
         }
 
         .architecture pre {
-            color: #333;
-            line-height: 1.8;
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 13px;
         }
 
-        /* Team Section */
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            color: #a5b4fc;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            color: #cbd5e1;
+        }
+
+        tr:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .team-member {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            background: rgba(99, 102, 241, 0.15);
+            transform: translateY(-4px);
         }
 
         .team-member h4 {
-            font-size: 20px;
+            color: #a5b4fc;
             margin-bottom: 10px;
         }
 
         .team-member p {
-            color: rgba(255,255,255,0.9);
+            color: #94a3b8;
             font-size: 14px;
         }
 
         /* Footer */
         footer {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            margin-top: 30px;
+            padding: 60px 40px;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            margin-top: 100px;
         }
 
         footer p {
-            color: #667eea;
-            font-weight: 600;
+            color: #64748b;
+            font-size: 14px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar-right {
+                gap: 15px;
+            }
+
+            .container {
+                padding: 120px 20px 40px;
+            }
+
             .hero-title {
-                font-size: 32px;
+                font-size: 42px;
             }
 
             h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .metrics {
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Code block styling */
-        .code-block {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 20px 0;
+            .student-id {
+                top: auto;
+                bottom: 20px;
+                right: 20px;
+            }
         }
 
         .highlight {
-            background: #fef3c7;
+            background: rgba(99, 102, 241, 0.2);
             padding: 2px 8px;
             border-radius: 4px;
+            color: #a5b4fc;
+        }
+
+        strong {
+            color: #a5b4fc;
             font-weight: 600;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .feature-card h4 {
-            color: #667eea;
-            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="muj-logo">
+                    <img src="mujlogo.jpg" alt="MUJ" style="height: 60px;">
+            </div>
+            <div class="navbar-logo">
+                PBL <span>2026</span>
+            </div>
+            <div class="navbar-subtitle">
+                Dept. of Computer Science & Engineering
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="#problem" class="nav-link">Problem</a>
+            <a href="#methodology" class="nav-link">Methodology</a>
+            <a href="#results" class="nav-link">Results</a>
+            <a href="#team" class="nav-link">Team</a>
+        </div>
+    </nav>
+
+    <!-- Student ID Badge -->
+    <div class="student-id">ID: 2427030155</div>
+
     <div class="container">
         <!-- Hero Section -->
         <div class="hero">
-            <div class="hero-header">
-                <div class="muj-logo">
-                    <img src="mujlogo.jpg" alt="MUJ" style="height: 60px;">
-                </div>
-                <div>
-                    <h5 style="color: #667eea; font-size: 18px;">PBL 2026</h5>
-                    <p style="color: #764ba2; font-size: 14px;">Dept. of Computer Science & Engineering</p>
-                </div>
-            </div>
-
-            <div class="student-id">ID: 2427030155</div>
-
             <h1 class="hero-title">Mobile DPI Hub</h1>
             <p class="hero-subtitle">Advanced Deep Packet Inspection for Android</p>
             <div class="hero-statement">
                 "Can we develop a professional-grade, mobile-native Deep Packet Inspection application that enables cybersecurity professionals to perform real-time network forensics and threat detection on Android devices with performance comparable to desktop solutions?"
             </div>
         </div>
-
-        <!-- Navigation -->
-        <nav>
-            <a href="#problem">Problem</a>
-            <a href="#methodology">Methodology</a>
-            <a href="#results">Results</a>
-            <a href="#team">Team</a>
-        </nav>
 
         <!-- Problem Statement Section -->
         <section id="problem">
@@ -374,15 +502,15 @@
             </p>
 
             <div class="feature-grid">
-                <div class="feature-card">
+                <div class="card">
                     <h4>🔍 Security Gap</h4>
                     <p>No professional-grade mobile DPI tool exists. Wireshark is desktop-only; PCAPdroid lacks deep inspection capabilities.</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>📱 Field Analysis Challenge</h4>
                     <p>Penetration testers need on-device analysis without desktop dependency for real-time field operations.</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>🔒 Encryption Barrier</h4>
                     <p>95% of internet traffic uses HTTPS/TLS encryption, making traditional inspection methods obsolete.</p>
                 </div>
@@ -407,24 +535,24 @@
 
             <h3>Research Gap / Innovation</h3>
             <div class="feature-grid">
-                <div class="feature-card">
+                <div class="card">
                     <h4>⚡ Performance Innovation</h4>
-                    <p><strong>Achieved:</strong> &lt;2% CPU overhead with eBPF vs. PCAPdroid's 10-15%</p>
+                    <p><strong>Achieved:</strong> <span class="highlight">&lt;2% CPU overhead</span> with eBPF vs. PCAPdroid's 10-15%</p>
                     <p><strong>Method:</strong> Kernel-level packet interception with adaptive sampling</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>🎯 Enhanced Detection</h4>
-                    <p><strong>Achieved:</strong> 50+ protocol/app identification (Instagram, WhatsApp, YouTube, etc.)</p>
+                    <p><strong>Achieved:</strong> <span class="highlight">50+ protocol/app identification</span> (Instagram, WhatsApp, YouTube, etc.)</p>
                     <p><strong>Method:</strong> TLS SNI extraction + HTTP Host analysis + pattern matching</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>🛡️ Multi-Method Threat Detection</h4>
-                    <p><strong>Achieved:</strong> 95%+ accuracy on known malware, 70%+ on zero-day</p>
+                    <p><strong>Achieved:</strong> <span class="highlight">95%+ accuracy</span> on known malware, 70%+ on zero-day</p>
                     <p><strong>Method:</strong> Signature-based (YARA) + Behavioral + ML-based detection</p>
                 </div>
             </div>
 
-            <p style="margin-top: 30px;"><strong>State-of-the-Art Comparison:</strong></p>
+            <p style="margin-top: 40px;"><strong>State-of-the-Art Comparison:</strong></p>
             <div class="metrics">
                 <div class="metric-card">
                     <div class="metric-value">8-12%</div>
@@ -465,28 +593,28 @@
                 <pre>
 ┌─────────────────────────────────────────────────────────┐
 │                  Presentation Layer                     │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │     Jetpack Compose UI (Material Design 3)       │  │
-│  │  • Home Dashboard  • Packet Monitor              │  │
-│  │  • Threat Alerts   • Flow Analysis               │  │
-│  └──────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │     Jetpack Compose UI (Material Design 3)       │   │
+│  │  • Home Dashboard  • Packet Monitor              │   │
+│  │  • Threat Alerts   • Flow Analysis               │   │
+│  └──────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────┘
                           ↓
 ┌─────────────────────────────────────────────────────────┐
-│                    Domain Layer                          │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │         PacketCaptureManager (Core Logic)        │  │
-│  │  • Flow Tracking  • Threat Detection             │  │
-│  │  • Statistics     • Protocol Identification      │  │
-│  └──────────────────────────────────────────────────┘  │
+│                    Domain Layer                         │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │         PacketCaptureManager (Core Logic)        │   │
+│  │  • Flow Tracking  • Threat Detection             │   │
+│  │  • Statistics     • Protocol Identification      │   │
+│  └──────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────┘
                           ↓
 ┌─────────────────────────────────────────────────────────┐
-│                     Data Layer                           │
-│  ┌────────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │   VPN      │  │   Protocol   │  │     Room      │  │
-│  │  Service   │→ │   Detector   │→ │   Database    │  │
-│  └────────────┘  └──────────────┘  └───────────────┘  │
+│                     Data Layer                          │
+│  ┌────────────┐  ┌──────────────┐  ┌───────────────┐    │
+│  │   VPN      │  │   Protocol   │  │     Room      │    │
+│  │  Service   │→ │   Detector   │→ │   Database    │    │
+│  └────────────┘  └──────────────┘  └───────────────┘    │ 
 └─────────────────────────────────────────────────────────┘
                 </pre>
             </div>
@@ -494,7 +622,7 @@
             <p><strong>Key Algorithms & Components:</strong></p>
 
             <div class="feature-grid">
-                <div class="feature-card">
+                <div class="card">
                     <h4>1. Packet Capture Engine</h4>
                     <ul style="margin-left: 20px;">
                         <li>VPN-based interception (Android VpnService API)</li>
@@ -504,7 +632,7 @@
                     </ul>
                 </div>
 
-                <div class="feature-card">
+                <div class="card">
                     <h4>2. Protocol Detection</h4>
                     <ul style="margin-left: 20px;">
                         <li><strong>TLS SNI Extraction:</strong> Server Name Indication parsing (95% accuracy)</li>
@@ -514,7 +642,7 @@
                     </ul>
                 </div>
 
-                <div class="feature-card">
+                <div class="card">
                     <h4>3. Threat Detection</h4>
                     <ul style="margin-left: 20px;">
                         <li><strong>Port Scan Detection:</strong> >20 unique ports/minute threshold</li>
@@ -538,25 +666,9 @@
             </ul>
 
             <h3>Live Execution</h3>
-            <div style="text-align: center; margin: 30px 0;">
+            <div style="text-align: center; margin: 40px 0;">
                 <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI" class="btn">VIEW CODE ON GITHUB</a>
                 <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI/releases" class="btn btn-secondary">DOWNLOAD APK</a>
-            </div>
-
-            <p><strong>Installation & Demo:</strong></p>
-            <div class="code-block">
-                <pre>
-# Clone repository
-git clone https://github.com/PrashamJ17/PBL_Mobile_DPI.git
-
-# Open in Android Studio
-# Build → Generate Signed APK
-
-# Install on device (Android 11+)
-adb install app-release.apk
-
-# Grant VPN permission → Start capturing network traffic
-                </pre>
             </div>
         </section>
 
@@ -586,64 +698,64 @@ adb install app-release.apk
             <h3>Performance Benchmarks</h3>
             <p>Tested on Pixel 8 Pro (Snapdragon 8 Gen 3, 12GB RAM):</p>
 
-            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                <thead style="background: #667eea; color: white;">
+            <table>
+                <thead>
                     <tr>
-                        <th style="padding: 15px; text-align: left;">Metric</th>
-                        <th style="padding: 15px; text-align: left;">Mobile DPI Hub</th>
-                        <th style="padding: 15px; text-align: left;">PCAPdroid</th>
-                        <th style="padding: 15px; text-align: left;">Improvement</th>
+                        <th>Metric</th>
+                        <th>Mobile DPI Hub</th>
+                        <th>PCAPdroid</th>
+                        <th>Improvement</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px;">CPU Usage</td>
-                        <td style="padding: 12px; font-weight: bold;">8-12%</td>
-                        <td style="padding: 12px;">10-15%</td>
-                        <td style="padding: 12px; color: #10b981;">✓ 20% reduction</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px;">Packet Rate</td>
-                        <td style="padding: 12px; font-weight: bold;">4000 pps</td>
-                        <td style="padding: 12px;">3000 pps</td>
-                        <td style="padding: 12px; color: #10b981;">✓ 33% faster</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px;">Protocol Detection</td>
-                        <td style="padding: 12px; font-weight: bold;">50+ apps</td>
-                        <td style="padding: 12px;">Basic protocols</td>
-                        <td style="padding: 12px; color: #10b981;">✓ App-level ID</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 12px;">Threat Detection</td>
-                        <td style="padding: 12px; font-weight: bold;">95% accuracy</td>
-                        <td style="padding: 12px;">None</td>
-                        <td style="padding: 12px; color: #10b981;">✓ New capability</td>
+                    <tr>
+                        <td>CPU Usage</td>
+                        <td style="font-weight: bold;">8-12%</td>
+                        <td>10-15%</td>
+                        <td style="color: #10b981;">✓ 20% reduction</td>
                     </tr>
                     <tr>
-                        <td style="padding: 12px;">Battery Drain</td>
-                        <td style="padding: 12px; font-weight: bold;">~15%/hour</td>
-                        <td style="padding: 12px;">~18%/hour</td>
-                        <td style="padding: 12px; color: #10b981;">✓ 16% improvement</td>
+                        <td>Packet Rate</td>
+                        <td style="font-weight: bold;">4000 pps</td>
+                        <td>3000 pps</td>
+                        <td style="color: #10b981;">✓ 33% faster</td>
+                    </tr>
+                    <tr>
+                        <td>Protocol Detection</td>
+                        <td style="font-weight: bold;">50+ apps</td>
+                        <td>Basic protocols</td>
+                        <td style="color: #10b981;">✓ App-level ID</td>
+                    </tr>
+                    <tr>
+                        <td>Threat Detection</td>
+                        <td style="font-weight: bold;">95% accuracy</td>
+                        <td>None</td>
+                        <td style="color: #10b981;">✓ New capability</td>
+                    </tr>
+                    <tr>
+                        <td>Battery Drain</td>
+                        <td style="font-weight: bold;">~15%/hour</td>
+                        <td>~18%/hour</td>
+                        <td style="color: #10b981;">✓ 16% improvement</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3>Detection Accuracy Breakdown</h3>
             <div class="feature-grid">
-                <div class="feature-card">
+                <div class="card">
                     <h4>TLS SNI Method</h4>
                     <p><strong>Accuracy:</strong> 95%</p>
                     <p><strong>Apps Detected:</strong> WhatsApp, Instagram, Facebook, YouTube, Netflix, Spotify, Telegram, Discord</p>
                     <p><strong>Coverage:</strong> All HTTPS/TLS encrypted traffic</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>HTTP Host Method</h4>
                     <p><strong>Accuracy:</strong> 90%</p>
                     <p><strong>Apps Detected:</strong> HTTP-based services and APIs</p>
                     <p><strong>Coverage:</strong> Unencrypted HTTP traffic</p>
                 </div>
-                <div class="feature-card">
+                <div class="card">
                     <h4>Port-based Method</h4>
                     <p><strong>Accuracy:</strong> 85%</p>
                     <p><strong>Protocols:</strong> SSH, FTP, SMTP, MySQL, PostgreSQL, Bitcoin, Ethereum</p>
@@ -664,7 +776,7 @@ adb install app-release.apk
             <div class="metrics">
                 <div class="metric-card">
                     <div class="metric-value">100%</div>
-                    <div class="metric-label">Apps Function Normally (No Network Blocking)</div>
+                    <div class="metric-label">Apps Function Normally</div>
                 </div>
                 <div class="metric-card">
                     <div class="metric-value">50+</div>
@@ -676,7 +788,7 @@ adb install app-release.apk
                 </div>
                 <div class="metric-card">
                     <div class="metric-value">Real-time</div>
-                    <div class="metric-label">Threat Detection & Alerting</div>
+                    <div class="metric-label">Threat Detection</div>
                 </div>
             </div>
         </section>
@@ -688,13 +800,20 @@ adb install app-release.apk
             <div class="team-grid">
                 <div class="team-member">
                     <h4>Project Guide</h4>
-                    <p>[Dr. Rishi Gupta]</p>
+                    <p> Dr. Rishi Gupta</p>
                     <p>Department of CSE</p>
                     <p>Manipal University Jaipur</p>
                 </div>
+
+                <div class="team-member">
+                    <h4>Prasham J</h4>
+                    <p>2427030155</p>
+                    <p>B.Tech Computer Science</p>
+                    <p>Lead Developer</p>
+                </div>
             </div>
 
-            <div style="margin-top: 40px; text-align: center;">
+            <div style="margin-top: 60px; text-align: center;">
                 <h3>Project Links</h3>
                 <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI" class="btn">GitHub Repository</a>
                 <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI/releases" class="btn btn-secondary">Download APK</a>
@@ -703,14 +822,43 @@ adb install app-release.apk
 
         <!-- Footer -->
         <footer>
-            <img src="mujlogo.jpg" alt="MUJ" style="height: 50px; margin-bottom: 20px;">
-            <p>Manipal University Jaipur</p>
+            <p style="color: #64748b; margin-bottom: 10px;">Manipal University Jaipur</p>
             <p>Department of Computer Science & Engineering • 2026</p>
-            <p style="margin-top: 20px; color: #999; font-size: 14px;">
-                PBL Project - Mobile DPI Hub<br>
-                Deep Packet Inspection for Android Devices
-            </p>
         </footer>
     </div>
+
+    <script>
+        // Smooth scroll and active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
