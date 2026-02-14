@@ -409,6 +409,38 @@
             font-size: 15px;
             margin: 8px 0;
         }
+        /* Live Demo Video */
+        .video-container {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.1);
+            transition: all 0.3s;
+        }
+
+        .video-container:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .demo-video {
+            width: 100%;
+            border-radius: 12px;
+            outline: none;
+        }
+
+        .video-title {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
 
         /* Footer */
         footer {
@@ -678,10 +710,25 @@
             </ul>
 
             <h3>Live Execution</h3>
-            <div style="text-align: center; margin: 40px 0;">
-                <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI" class="btn">VIEW CODE ON GITHUB</a>
-                <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI/releases" class="btn btn-secondary">DOWNLOAD APK</a>
+
+            <div class="video-container">
+                <div class="video-title">📹 Real-Time App Demonstration</div>
+
+                <video class="demo-video" controls muted>
+                    <source src="Appln_Video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
             </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI" class="btn">
+                    VIEW CODE ON GITHUB
+                </a>
+                <a href="https://github.com/PrashamJ17/PBL_Mobile_DPI/releases" class="btn btn-secondary">
+                    DOWNLOAD APK
+                </a>
+            </div>
+
         </section>
 
         <!-- Results Section -->
